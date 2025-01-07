@@ -32,6 +32,13 @@ Route::get('/contact', function() {
     return 'Selamat Datang Di Halaman Contact';
 });
 
+Route::get('/siswa', function () {
+
+    $data_siswa = ['Dhea', 'Daffa', 'Hana', 'Allia', 'Faza', 'Fazli', 'teman2'];
+
+    return view('tampil', compact('data_siswa'));
+});
+
 // route parameter
 Route::get('/tes/{nama}/{ttl}/{jk}/{agama}/{alamat}', function($nama, $ttl, $jenis, $agama, $alamat){
     return "Nama : ".$nama."<br>".
