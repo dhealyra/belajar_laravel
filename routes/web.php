@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ppdbscontroller;
+use App\Models\Barang;
+use App\Http\Controllers\SiswasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +23,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', function() {
-    return 'Selamat Datang Di Halaman Home';
-});
+// CRUD
+Route::resource('siswa', SiswasController::class);
+
+// Route::get('/homee', function() {
+//     return 'Selamat Datang Di Halaman Home';
+// });
 
 
 Route::get('/about', function() {
@@ -32,12 +40,12 @@ Route::get('/contact', function() {
     return 'Selamat Datang Di Halaman Contact';
 });
 
-Route::get('/siswa', function () {
+// Route::get('/siswa', function () {
 
-    $data_siswa = ['Dhea', 'Daffa', 'Hana', 'Allia', 'Faza', 'Fazli', 'teman2'];
+//     $data_siswa = ['Dhea', 'Daffa', 'Hana', 'Allia', 'Faza', 'Fazli', 'teman2'];
 
-    return view('tampil', compact('data_siswa'));
-});
+//     return view('tampil', compact('data_siswa'));
+// });
 
 // route parameter
 Route::get('/tes/{nama}/{ttl}/{jk}/{agama}/{alamat}', function($nama, $ttl, $jenis, $agama, $alamat){
@@ -155,3 +163,20 @@ Route::get('/latihan/{a}/{b}/{c}/{d}/{e}/{f}', function($nama, $call, $jenis, $b
             "----------------------------------------------- <br>".
             "Total Pembayaran : ".$total-$diskon;
 });
+
+Route::get('/barangg', function(){
+    $barang = Barang::all();
+    return view('tampil_barang', compact('barang'));
+});
+
+
+
+Route::get('/post', [PostsController::class, 'menampilkan']);
+Route::get('/barang', [PostsController::class, 'menampilkan2']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\SiswasController::class, 'index'])->name('siswa');
+
+Route::resource('ppdb', ppdbscontroller::class);
+ 
