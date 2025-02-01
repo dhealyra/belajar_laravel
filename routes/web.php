@@ -1,10 +1,27 @@
 <?php
 
+use App\Http\Controllers\CostumerController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ppdbscontroller;
 use App\Models\Barang;
 use App\Http\Controllers\SiswasController;
+use App\Http\Controllers\PenggunasController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\TeleponController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PenerbitController;
+use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\TransaksiController;
+
+
+
+
+
 
 
 /*
@@ -179,4 +196,27 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\SiswasController::class, 'index'])->name('siswa');
 
 Route::resource('ppdb', ppdbscontroller::class);
+
+Route::resource('pengguna', PenggunasController::class);
+Route::resource('telepon', TeleponController::class);
+
+Route::resource('kategori', KategoriController::class);
+Route::resource('produk', ProdukController::class);
+
+Route::resource('product', ProductController::class);
+Route::resource('costumer', CostumerController::class);
+Route::resource('order', OrderController::class);
+
+Route::resource('penerbit', PenerbitController::class);
+Route::resource('pembeli', PembeliController::class);
+Route::resource('genre', GenreController::class);
+Route::resource('buku', BukuController::class);
+Route::resource('transaksi', TransaksiController::class);
+
+
+
+
+
+
+
  

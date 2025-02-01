@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header" style="display: flex; justify-content:space-between;">
                   <p style="position: relative; top:5px;">{{ __('Data Calon Siswa') }}</p>

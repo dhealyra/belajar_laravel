@@ -33,6 +33,11 @@
                                 <option value="XI RPL 3">XI RPL 3</option>
                             </select>
                           </div>
+                          <div class="form-group mb-2">
+                            <label class="form-label">Cover :</label>
+                            <img src="{{ asset('/images/siswa/' . $siswa->cover) }}" alt="">
+                            <input type="file" class="form-control" name="cover" required>
+                          </div>
                         <button type="submit" class="btn btn-primary">Update</button>
                       </form>
                 </div>
